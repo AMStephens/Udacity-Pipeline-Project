@@ -54,6 +54,7 @@ chmod +x make_prediction.sh
 ```
 A successful prediction will look like this:
 ![make_prediction prediction](https://user-images.githubusercontent.com/71175451/234257530-6ac04a34-349f-4e48-9622-24e462f3c5a9.PNG)
+
 After verifying the app can successfully make a prediction, stop it from running by returning to the original cloud shell session and using ctrl + c
 
 ### 3. Deploy the app
@@ -81,7 +82,7 @@ For the scopes, please select full access instead of custom defined.
 Make sure to save the PAT for later.
 
 Next, create a new agent pool in the devops project settings. It should have the following parameters, including the name:
-![image](https://user-images.githubusercontent.com/71175451/234263956-bc33acec-6493-46d1-a3f8-e62ea24922c7.png)
+![image](https://user-images.githubusercontent.com/71175451/234291321-8eb06072-c4e0-4ca6-930a-b79f5d3dc5d1.png)
 
 After the agent pool has successfully been created, then create a VM in the Azure portal. It should be setup with the following parameters:
 ![image](https://user-images.githubusercontent.com/71175451/234264290-f77f1fc5-ee71-46c9-8a7e-f0cd5146e81b.png)
@@ -100,7 +101,7 @@ exit
 Now restart the VM to apply these changes, re-entering ssh devopsagent@40.91.213.221 to connect back to the VM in the cloud shell.
 Go back to the Agent pool in Devops, and add a new Agent:
 ![image](https://user-images.githubusercontent.com/71175451/234280308-f6d2fcdc-c7a7-4767-b4f5-96c139cf793c.png)
-![image](https://user-images.githubusercontent.com/71175451/234280530-6ddd7796-016b-4ff5-8e01-fd912d9d9131.png)
+![image](https://user-images.githubusercontent.com/71175451/234291525-19a4ce2c-38a1-4867-a209-26985613669f.png)
 Then enter the following commands back in the cloud shell to download, create and configure the agent (some values will need to change to match the ones given in your setup):
 ```
 curl -O https://vstsagentpackage.azureedge.net/agent/2.202.1/vsts-agent-linux-x64-2.202.1.tar.gz
@@ -179,5 +180,3 @@ Regarding the AI itself, this could be edited to allow the user to enter more pa
 
 TBC.
 
-
-![Github Action passed](https://user-images.githubusercontent.com/71175451/230931887-68f8f7bd-6fec-4d90-8799-5bccb72b0aa6.PNG)
