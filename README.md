@@ -10,7 +10,7 @@ Software/services needed to execute this project:
 
 ## Project Plan
 
-TBC.
+TBC...
 
 ## Instructions
 
