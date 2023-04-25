@@ -24,4 +24,4 @@
 # Load test the app
 
  pip install locust
- locust
+ locust -f ./locustfile.py --host=http://localhost:5000 --headless -u 100 -r 100
