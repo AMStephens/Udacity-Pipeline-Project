@@ -20,7 +20,7 @@ Start up and new cloud shell session in Azure, and clone the github repository:
 ```
 git clone https://github.com/AMStephens/Udacity-Pipeline-Project.git
 ```
-Sucessfully cloning the repo should look as follows:
+Successfully cloning the repo should look as follows:
 ![Azure Cloud Shell cloned repo screenshot2](https://user-images.githubusercontent.com/71175451/234249392-987da38a-26f4-4045-bbbd-43e44528a0a1.PNG)
 Navigate to the project directory:
 ```
@@ -35,7 +35,7 @@ Install the required packages:
 ```
 make all
 ```
-If this stage has been sucessful you should have an output like this:
+If this stage has been successful you should have an output like this:
 ![makeall output](https://user-images.githubusercontent.com/71175451/234250207-a8a1ab09-a088-441b-8cfc-59fb6bcac24f.PNG)
 
 ### 2. Test run the app
@@ -46,7 +46,7 @@ python app.py
 ```
 While the app is running, it should look like this:
 ![starting application](https://user-images.githubusercontent.com/71175451/234256673-7763133e-4a5b-48d0-89f9-4284adcdd607.PNG)
-Then, open a seperate cloud shell session, and run the following commands to make a test prediction:
+Then, open a separate cloud shell session, and run the following commands to make a test prediction:
 ```
 cd Udacity-Pipeline-Project
 chmod +x make_prediction.sh
@@ -54,7 +54,7 @@ chmod +x make_prediction.sh
 ```
 A successful prediction will look like this:
 ![make_prediction prediction](https://user-images.githubusercontent.com/71175451/234257530-6ac04a34-349f-4e48-9622-24e462f3c5a9.PNG)
-After verifying the app can sucessfully make a prediction, stop it from running by returning to the original cloud shell session and using ctrl + c
+After verifying the app can successfully make a prediction, stop it from running by returning to the original cloud shell session and using ctrl + c
 
 ### 3. Deploy the app
 
@@ -69,7 +69,7 @@ You should also be able to navigate to the webpage:
 
 ### 4. Setup Azure Devops
 
-Firstly, create a project and service connection in Azure Devops. For this step, you can refer to the offical documentation:
+Firstly, create a project and service connection in Azure Devops. For this step, you can refer to the official documentation:
 https://learn.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops&WT.mc_id=udacity_learn-wwl#create-an-azure-devops-project-and-connect-to-azure
 
 ### 5. Create a pipeline agent
@@ -83,14 +83,14 @@ Make sure to save the PAT for later.
 Next, create a new agent pool in the devops project settings. It should have the following parameters, including the name:
 ![image](https://user-images.githubusercontent.com/71175451/234263956-bc33acec-6493-46d1-a3f8-e62ea24922c7.png)
 
-After the agent pool has sucessfully been created, then create a VM in the Azure portal. It should be setup with the following parameters:
+After the agent pool has successfully been created, then create a VM in the Azure portal. It should be setup with the following parameters:
 ![image](https://user-images.githubusercontent.com/71175451/234264290-f77f1fc5-ee71-46c9-8a7e-f0cd5146e81b.png)
 
-Next, in the Azure cloud shell, run the following, replacing the IP address with the public IP address found in the overview section of your VM, and accepting the the default promps, providing the username and password you have set up:
+Next, in the Azure cloud shell, run the following, replacing the IP address with the public IP address found in the overview section of your VM, and accepting the default prompts, providing the username and password you have set up:
 ```
 ssh devopsagent@40.91.213.221
 ```
-Install Docker and confiure the user:
+Install Docker and configure the user:
 ```
 sudo snap install docker
 sudo groupadd docker
@@ -101,7 +101,7 @@ Now restart the VM to apply these changes, re-entering ssh devopsagent@40.91.213
 Go back to the Agent pool in Devops, and add a new Agent:
 ![image](https://user-images.githubusercontent.com/71175451/234280308-f6d2fcdc-c7a7-4767-b4f5-96c139cf793c.png)
 ![image](https://user-images.githubusercontent.com/71175451/234280530-6ddd7796-016b-4ff5-8e01-fd912d9d9131.png)
-Then enter the following commands back in the cloud shell to downlod, create and configure the agent (some values will need to change to match the ones given in your setup):
+Then enter the following commands back in the cloud shell to download, create and configure the agent (some values will need to change to match the ones given in your setup):
 ```
 curl -O https://vstsagentpackage.azureedge.net/agent/2.202.1/vsts-agent-linux-x64-2.202.1.tar.gz
 mkdir myagent && cd myagent
@@ -139,7 +139,7 @@ Now in your Agent pool in Azure Devops, in your Agents menu, you should see that
 ### 6. Create a pipeline
 
 Next, create a pipeline following the documentation. For the YML file, use the one currently in this repo, checking first that none of the parameters need changing (i.e. name of service connection)
-You can now check to see if the pipeline run sucessfully by examining the build; it should look like this with no errors:
+You can now check to see if the pipeline run successfully by examining the build; it should look like this with no errors:
 ![sucessful pipeline run](https://user-images.githubusercontent.com/71175451/234284211-eaa0e0e3-c430-44c9-b206-d753d4f31c8b.PNG)
 
 ### 7. Use the App to make a prediction
@@ -148,13 +148,13 @@ If necessary, prepare the virtual environment then run the app again using:
 ```
 python app.py
 ```
-Open a seperate cloud shell, and run the following:
+Open a separate cloud shell, and run the following:
 ```
 cd Udacity-Pipeline-Project
 chmod +x make_predict_azure_app.sh
 ./make_predict_azure_app.sh
 ```
-A sucessful prediction should look like this:
+A successful prediction should look like this:
 ![sucessful prediction main](https://user-images.githubusercontent.com/71175451/234285033-599289c8-0af9-483b-8a6f-9ec720221a1c.PNG)
 
 ### 8. Monitor the logs and load test
@@ -173,7 +173,7 @@ You can edit the number of users (u) and the spawn rate (r) if you wish.
 
 ## Enhancements
 
-Regarding the AI itself, this could be editted to allow the user to enter more parameters, to get a more custom prediction. Also, the website for the app could be improved to be more functional.
+Regarding the AI itself, this could be edited to allow the user to enter more parameters, to get a more custom prediction. Also, the website for the app could be improved to be more functional.
 
 ## Demo
 
