@@ -1,16 +1,23 @@
 # Udacity-Pipeline-Project
 [![Python application test with Github Actions](https://github.com/AMStephens/Udacity-Pipeline-Project/actions/workflows/pythonapp.yml/badge.svg)](https://github.com/AMStephens/Udacity-Pipeline-Project/actions/workflows/pythonapp.yml)
 
+## Overview
+
 This project deploys a web app that predicts Boston house prices using a python machine learning model. It will automatically be deployed through Azure Devops whenever there is a source code change.
 Software/services needed to execute this project:
  * Github
  * Azure account, including Azure Devops, Azure App services and Azure cloud CLI
+
+## Project Plan
+
+TBC.
 
 ## Instructions
 
 The end result of the project will reflect the following structure:
 ![image](https://user-images.githubusercontent.com/71175451/234247880-5d278d6a-160c-481b-9922-0374052122fa.png)
 Where a change event or commit in Github triggers a pipeline run in Azure, which runs the machine learning app and allows the user to make predictions.
+Any Azure cloud shell commands in these instructions can be found in the commands.sh file.
 
 The steps to set up this infrastructure are as follows:
 
@@ -22,6 +29,7 @@ git clone https://github.com/AMStephens/Udacity-Pipeline-Project.git
 ```
 Successfully cloning the repo should look as follows:
 ![Azure Cloud Shell cloned repo screenshot2](https://user-images.githubusercontent.com/71175451/234249392-987da38a-26f4-4045-bbbd-43e44528a0a1.PNG)
+
 Navigate to the project directory:
 ```
 cd Udacity-Pipeline-Project
@@ -53,6 +61,7 @@ chmod +x make_prediction.sh
 ./make_prediction.sh
 ```
 A successful prediction will look like this:
+
 ![make_prediction prediction](https://user-images.githubusercontent.com/71175451/234257530-6ac04a34-349f-4e48-9622-24e462f3c5a9.PNG)
 
 After verifying the app can successfully make a prediction, stop it from running by returning to the original cloud shell session and using ctrl + c
@@ -66,6 +75,7 @@ az webapp up -n aliceswebapp14091990
 You should be able to see that a web app has been created in the portal:
 ![working web app2](https://user-images.githubusercontent.com/71175451/234258490-19570846-7161-413b-919f-1996119ab484.PNG)
 You should also be able to navigate to the webpage:
+
 ![image](https://user-images.githubusercontent.com/71175451/234258889-6b24e050-4e79-4f58-a8dd-869c07f2af37.png)
 
 ### 4. Setup Azure Devops
@@ -102,6 +112,7 @@ Now restart the VM to apply these changes, re-entering ssh devopsagent@40.91.213
 Go back to the Agent pool in Devops, and add a new Agent:
 ![image](https://user-images.githubusercontent.com/71175451/234280308-f6d2fcdc-c7a7-4767-b4f5-96c139cf793c.png)
 ![image](https://user-images.githubusercontent.com/71175451/234291525-19a4ce2c-38a1-4867-a209-26985613669f.png)
+
 Then enter the following commands back in the cloud shell to download, create and configure the agent (some values will need to change to match the ones given in your setup):
 ```
 curl -O https://vstsagentpackage.azureedge.net/agent/2.202.1/vsts-agent-linux-x64-2.202.1.tar.gz
@@ -141,6 +152,7 @@ Now in your Agent pool in Azure Devops, in your Agents menu, you should see that
 
 Next, create a pipeline following the documentation. For the YML file, use the one currently in this repo, checking first that none of the parameters need changing (i.e. name of service connection)
 You can now check to see if the pipeline run successfully by examining the build; it should look like this with no errors:
+
 ![sucessful pipeline run](https://user-images.githubusercontent.com/71175451/234284211-eaa0e0e3-c430-44c9-b206-d753d4f31c8b.PNG)
 
 ### 7. Use the App to make a prediction
