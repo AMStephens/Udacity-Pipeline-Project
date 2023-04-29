@@ -168,6 +168,7 @@ chmod +x make_predict_azure_app.sh
 ./make_predict_azure_app.sh
 ```
 A successful prediction should look like this:
+
 ![sucessful prediction main](https://user-images.githubusercontent.com/71175451/234285033-599289c8-0af9-483b-8a6f-9ec720221a1c.PNG)
 
 ### 8. Monitor the logs and load test
@@ -190,5 +191,6 @@ Regarding the AI itself, this could be edited to allow the user to enter more pa
 
 ## Demo
 
-TBC.
+Please see this link for a video demo of this project:
+https://drive.google.com/file/d/1ULpCFSnQor6QMud9wUDmOztQhvdq2Tco/view?usp=sharing
 
