@@ -10,7 +10,10 @@ Software/services needed to execute this project:
 
 ## Project Plan
 
-TBC...
+Please see the following for project tracking:
+
+https://github.com/AMStephens/Udacity-Pipeline-Project/blob/main/Udacity%20project%20schedule.xlsx
+https://trello.com/b/v9eCQ6d4/udacity-pipeline-project
 
 ## Instructions
 
